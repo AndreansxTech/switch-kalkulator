@@ -90,7 +90,7 @@ int main()
             }
             else if(x<0 && y>=0)
             {
-                cout<<"Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac druga liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
+                cout<<"Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac tylko druga liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
                 pierwiastek= sqrt (y);
                 cout<<"Pierwiastek z drugiej liczby to "<<pierwiastek<<endl;
             }
