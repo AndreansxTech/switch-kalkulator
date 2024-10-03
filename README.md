@@ -1,5 +1,5 @@
 Taki projekcik na informatyke w szkole</br>
-Kalkulator mogący wykonać 8 działań matematycznych
+Kalkulator mogący wykonać 8 działań matematycznych</br>
 Zaprogramowany w C++
 1. Dodawanie
 2. Odejmowanie
@@ -8,7 +8,7 @@ Zaprogramowany w C++
 5. Pierwiastkowanie (drugiego stopnia)
 6. Podnoszenie do kwadratu
 7. Dzielenie z resztą
-8. Procenty
-Może także wpisać nowe liczby oraz wypisać menu jescze raz
+8. Procenty</br>
+Może także wpisać nowe liczby oraz wypisać menu jescze raz</br>
 N. Zadeklarowanie liczb jeszcze raz
 M. Wypisanie menu jeszcze raz
