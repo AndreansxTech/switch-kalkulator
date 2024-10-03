@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
-//Michal Bankowski
+/*Michal Bankowski
+wiekszosc kodu jest w petli While(true), poniewaz nie trzeba wtedy odpalac programu od nowa za kazdym razem
+wyniki np pierwiastkow podaje z dokladnoscia do 5 miejsc po przecinku */
 using namespace std;
 long double x, y;
 void menu()
