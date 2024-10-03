@@ -5,7 +5,7 @@ Zaprogramowany w C++
 2. Odejmowanie
 3. Mnożenie
 4. Dzielenie całkowite
-5. Pierwiastkowanie
+5. Pierwiastkowanie (drugiego stopnia)
 6. Podnoszenie do kwadratu
 7. Dzielenie z resztą
 8. -----
