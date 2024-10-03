@@ -6,6 +6,7 @@ void menu()
 {
     cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
     cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
+    cout<<"!kontrolnie: uruchomiono funkcje menu\n";
 }
 void liczby()
 {
@@ -31,7 +32,8 @@ int main()
         cout<<"Wybierz ktoras z opcji z listy: ";
         cin>>wybor;
         cout<<"\n";
-        switch(wybor){
+        switch(wybor)
+        {
         case 'M':
         case 'm':
             menu();
@@ -61,10 +63,13 @@ int main()
             }
             break;
         case '5':
-            cout<<"Wybrales pierwiastkowanie\n Wpisz 1 aby pierwiastkowac pierwsza liczbe a 2 aby druga\n Ktora liczbe chcesz zpierwiastkowac: ";
-            int wybor2;
+            cout<<"Wybrales pierwiastkowanie\n";
             double pierwiastek;
-            cin>>wybor2;
+            if (x>=0 && y>=0)
+            {
+                cout<<"Wpisz 1 aby pierwiastkowac pierwsza liczbe a 2 aby druga: ";
+                int wybor2;
+                cin>>wybor2;
                 if (wybor2==1)
                 {
                     pierwiastek= sqrt (x);
@@ -77,7 +82,24 @@ int main()
                 }
                 else
                     cout<<"Mozesz wybrac tylko 1 lub 2 \n";
-                break;
+            }
+            else if(x>=0 && y<0)
+            {
+                cout<<"Poniewaz druga liczba jest ujemna, mozesz zpierwiastkowac tylko pierwsza liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
+                pierwiastek= sqrt (x);
+                cout<<"Pierwiastek z pierwszej liczby to "<<pierwiastek<<endl;
+            }
+            else if(x<0 && y>=0)
+            {
+                cout<<"Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac druga liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
+                pierwiastek= sqrt (y);
+                cout<<"Pierwiastek z drugiej liczby to "<<pierwiastek<<endl;
+            }
+            else
+            {
+                cout<<"Zadna liczba do kwadratu nie da liczby ujemnej !\n Nie mozna wykonac tej operacji\n";
+            }
+            break;
         case '6':
             cout<<"Wybrales podnoszenie do kwadratu\n Ktora liczbe chcesz podniesc do kwadratu (Wpisz 1 dla pierwszej a 2 dla drugiej): ";
             int wybor3;
@@ -105,8 +127,15 @@ int main()
             break;
         case '8':
             float procenty;
-            procenty=(x/y)*100;
-            cout<<"Wybrales procenty\n Liczba "<<x<<" stanowi "<<procenty<<"% liczby "<<y<<endl;
+            if(y!=0)
+            {
+                procenty=(x/y)*100;
+                cout<<"Wybrales procenty\n Liczba "<<x<<" stanowi "<<procenty<<"% liczby "<<y<<endl;
+            }
+            else
+            {
+                cout<<"Liczba druga jest zerem wiec nie mozna obliczyc ile procent z niej stanowi liczba "<<x<<endl;
+            }
             break;
         case '9':
             exit(0);
