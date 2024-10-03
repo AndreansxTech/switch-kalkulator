@@ -8,7 +8,7 @@ Zaprogramowany w C++
 5. Pierwiastkowanie (drugiego stopnia)
 6. Podnoszenie do kwadratu
 7. Dzielenie z resztą
-8. -----
+8. Procenty
    Może także wpisać nowe liczby oraz wypisać menu jescze raz
 N. Zadeklarowanie liczb jeszcze raz
 M. Wypisanie menu jeszcze raz
