@@ -10,5 +10,5 @@ Zaprogramowany w C++
 7. Dzielenie z resztą
 8. Procenty</br>
 Może także wpisać nowe liczby oraz wypisać menu jescze raz</br>
-N. Zadeklarowanie liczb jeszcze raz
+N. Zadeklarowanie liczb jeszcze raz</br>
 M. Wypisanie menu jeszcze raz
