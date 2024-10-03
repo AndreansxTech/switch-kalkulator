@@ -18,7 +18,7 @@ void liczby()
     cout<<"Podaj druga liczbe: \n";
         cin>>y;
     if(y==0)
-        cout<<"Liczba druga jest zerem co oznacza ze nie bedzie mozna przez nia dzielic!\n";
+        cout<<"Druga liczba jest zerem co oznacza ze nie bedzie mozna przez nia dzielic!\n";
     else
         cout<<"Obie liczby sa okej\n";
 }
