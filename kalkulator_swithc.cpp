@@ -5,8 +5,7 @@ long double x, y;
 void menu()
 {
     cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
-    cout<<" 6. Kwadrat\n 7. Dzielenie z reszta\n 8. \n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
-    cout<<"!kontrolnie: uruchomiono funkcje menu\n";
+    cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
 }
 void liczby()
 {
@@ -15,11 +14,15 @@ void liczby()
 
     cout<<"Podaj druga liczbe: \n";
         cin>>y;
+    if(y==0)
+        cout<<"Liczba druga jest zerem co oznacza ze nie bedzie mozna przez nia dzielic!\n";
+    else
+        cout<<"Obie liczby sa okej\n";
 }
 
 int main()
 {
-    cout<<"Kalkulator oparty na funkcji switch\n";
+    cout<<"----Kalkulator oparty na funkcji switch----\n";
     liczby();
     menu();
     while(true)
@@ -99,6 +102,11 @@ int main()
             }
             else
                 cout<<"Nie mozna dzielic przez 0 !\n";
+            break;
+        case '8':
+            float procenty;
+            procenty=(x/y)*100;
+            cout<<"Wybrales procenty\n Liczba "<<x<<" stanowi "<<procenty<<"% liczby "<<y<<endl;
             break;
         case '9':
             exit(0);
