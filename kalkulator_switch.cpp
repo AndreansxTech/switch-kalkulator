@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+//Michal Bankowski
 using namespace std;
 long double x, y;
 void menu()
