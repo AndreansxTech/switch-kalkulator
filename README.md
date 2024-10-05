@@ -1,4 +1,4 @@
-<h1>Taki projekcik na informatyke w szkole</h1></br>
+<h1>Projekt na informatykę w szkole - Ka1kulat0r</h1></br>
 <h2>Kalkulator mogący wykonać 8 działań matematycznych</h2></br>
 Zaprogramowany w C++</br>
 1. Dodawanie</br>
