@@ -6,20 +6,9 @@ using namespace std;
 float x, y;
 int kolor=7;
 HANDLE color=GetStdHandle(STD_OUTPUT_HANDLE);
+
 void kolorki()
 {
-    //int kolor;
-    /*if (kolor==11)
-        SetConsoleTextAttribute(color,11);
-    else if(kolor==12)
-        SetConsoleTextAttribute(color,12);
-    else if(kolor==13)
-        SetConsoleTextAttribute(color,13);
-    else if(kolor==6)
-        SetConsoleTextAttribute(color,8);
-    else
-        SetConsoleTextAttribute(color,7);
-*/
     switch(kolor){
         case 11:
             SetConsoleTextAttribute(color,11);
@@ -42,8 +31,6 @@ void kolorki()
         default:
             SetConsoleTextAttribute(color,7);
             break;
-
-
     }
     kolor=0;
 }
@@ -55,13 +42,15 @@ void wypisz_wynik()
 void menu()
 {
     wypisz_wynik();
-    cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
+    cout<<"--- Wybierz opcje od 1 do 8 aby wykonac obliczenia ---\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
     cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
     kolorki();
+
 }
 void informacja()
 {
-    kolor=14; kolorki(); cout<<"[";
+
+    kolor=14; kolorki(); cout<<"\n[";
     kolor=12; kolorki(); cout<<"!";
     kolor=14; kolorki(); cout<<"]";
 }
@@ -100,18 +89,19 @@ void liczby()
 
 }
 
+
 int main()
 {
-    cout<<"----Kalkulator oparty na funkcji switch----\n";
+    cout<<"----Kalkulator oparty na funkcji switch----\n"; kolor=14; kolorki();
+    cout<<"Made by @AndreansxTech on Github\n";
     liczby();
     menu();
     while(true)
     {
         char wybor;
         kolor=7; kolorki();
-        cout<<"Wybierz ktoras z opcji z listy: "; kolor=9; kolorki();
+        cout<<"\n Wybierz ktoras z opcji z listy: "; kolor=9; kolorki();
         cin>>wybor;
-        cout<<"\n";
         switch(wybor)
         {
         case 'M':
@@ -149,21 +139,37 @@ int main()
             else
             {
                 kolor=12; kolorki();
-                cout<<"Nie mozna dzielic przez zero !\n Wpisz liczby jeszcze raz\n";
+                cout<<"Nie mozna dzielic przez zero !\n Wpisz liczby jeszcze raz";
                 liczby();
             }
             break;
         case '5':
             informacja();
             cout<<" Wybrales pierwiastkowanie\n";
-            double pierwiastek;
+            float pierwiastek;
             if (x>=0 && y>=0)
             {
                 kolor=13; kolorki();
-                cout<<"Z ktorej liczby chcesz obliczyc pierwiastek (wpisz 1 aby pierwiastkowac pierwsza liczbe a 2 aby druga): ";
-                int wybor2;
+                cout<<"\n Z ktorej liczby chcesz obliczyc pierwiastek (wpisz 1 aby pierwiastkowac pierwsza liczbe a 2 aby druga): ";
+                char wybor2;
                 cin>>wybor2;
-                if (wybor2==1)
+                wypisz_wynik();
+                switch(wybor2)
+                {
+                case '1':
+                    pierwiastek=sqrt(x);
+                    cout<<"\n Pierwiastek z liczby "<<x<<" to: "<<pierwiastek<<endl;
+                    break;
+                case '2':
+                    pierwiastek=sqrt(y);
+                    cout<<"\n Pierwiastek z liczby "<<y<<" to: "<<pierwiastek<<endl;
+                    break;
+                default:
+                    kolor=12; kolorki();
+                    cout<<"\n Mozesz wybrac tylko 1 lub 2 \n";
+                    break;
+                }
+                /*if (wybor2==1)
                 {
                     pierwiastek= sqrt (x);
                     cout<<"\n Pierwiastek z pierwszej liczby to: "<<pierwiastek<<endl;
@@ -174,20 +180,22 @@ int main()
                     cout<<"Pierwiastek z drugiej liczby to: "<<pierwiastek<<endl;
                 }
                 else
-                    cout<<"Mozesz wybrac tylko 1 lub 2 \n";
+                {
+                    informacja(); cout<<" Mozesz wybrac tylko 1 lub 2 \n";
+                }*/
             }
             else if(x>=0 && y<0)
             {
+                informacja();
                 cout<<"Poniewaz druga liczba jest ujemna, mozesz zpierwiastkowac tylko pierwsza liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
-                pierwiastek= sqrt (x);
-                kolor=11; kolorki();
+                pierwiastek= sqrt (x); wypisz_wynik();
                 cout<<"Pierwiastek z pierwszej liczby to "<<pierwiastek<<endl;
             }
             else if(x<0 && y>=0)
             {
+                informacja();
                 cout<<"Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac druga liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
-                pierwiastek= sqrt (y);
-                kolor=11; kolorki();
+                pierwiastek= sqrt (y); wypisz_wynik();
                 cout<<"Pierwiastek z drugiej liczby to "<<pierwiastek<<endl;
             }
             else
@@ -213,8 +221,7 @@ int main()
             }
             else
             {
-                kolor=12; kolorki();
-                cout<<"\n Mozesz wybrac tylko liczbe 1 lub 2\n \n";
+                kolor=12; kolorki(); cout<<"\n Mozesz wybrac tylko liczbe 1 lub 2\n";
             }
             break;
         case '7':
@@ -260,12 +267,21 @@ int main()
             case 't':
             case 'y':
                 {
-                    informacja(); cout<<" Closing Ka1kulat0r_v0.1."; Sleep(500);cout<<".";Sleep(500);cout<<".";Sleep(500);cout<<".";
+                    informacja(); cout<<" Closing Ka1kulat0r_v0.2.";
+                    int slep=0;
+                    while(slep<4)
+                    {
+                        Sleep(500);
+                        cout<<".";
+                        slep+=1;
+                    }
                     exit(0);
                 }
             case 'n':
             case 'N':
-                informacja(); cout<<" Zostajesz w programie !\n";
+                    informacja(); cout<<" Zostajesz w programie !\n"; break;
+            default:
+                    kolor=12; kolorki(); cout<<" Nie ma takiej opcji \n"; break;
             }
             break;
         default:
