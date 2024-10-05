@@ -1,10 +1,24 @@
 #include <iostream>
 #include <cmath>
+#include <windows.h>
 /*Michal Bankowski
 wiekszosc kodu jest w petli While(true), poniewaz nie trzeba wtedy odpalac programu od nowa za kazdym razem
 wyniki np pierwiastkow podaje z dokladnoscia do 5 miejsc po przecinku */
 using namespace std;
+HANDLE color=GetStdHandle(STD_OUTPUT_HANDLE);
 long double x, y;
+int kolor;
+void kolorki()
+{
+    //int kolor;
+    if (kolor==12)
+        SetConsoleTextAttribute(color,12);
+    else if(kolor==13)
+        SetConsoleTextAttribute(color,13);
+    else
+        SetConsoleTextAttribute(color,7);
+}
+
 void menu()
 {
     cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
