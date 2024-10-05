@@ -10,19 +10,48 @@ long double x, y;
 int kolor;
 void kolorki()
 {
-    //int kolor;
-    if (kolor==12)
+        //int kolor;
+    /*if (kolor==11)
+        SetConsoleTextAttribute(color,11);
+    else if(kolor==12)
         SetConsoleTextAttribute(color,12);
     else if(kolor==13)
         SetConsoleTextAttribute(color,13);
+    else if(kolor==6)
+        SetConsoleTextAttribute(color,8);
     else
         SetConsoleTextAttribute(color,7);
+*/
+    switch(kolor){
+        case 11:
+            SetConsoleTextAttribute(color,11);
+            break;
+        case 12:
+            SetConsoleTextAttribute(color,12);
+            break;
+        case 13:
+            SetConsoleTextAttribute(color,13);
+            break;
+        case 6:
+            SetConsoleTextAttribute(color,6);
+            break;
+        default:
+            SetConsoleTextAttribute(color,7);
+            break;
+
+    }
+
+    cout<<"kontrolnie kolorek: "<<kolor<<endl;
+    kolor=0;
 }
 
 void menu()
 {
+    kolor=11;
+    kolorki();
     cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
     cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
+    kolorki();
 }
 void liczby()
 {
