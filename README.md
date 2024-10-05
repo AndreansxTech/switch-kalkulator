@@ -15,5 +15,5 @@ M. Wypisanie menu jeszcze raz</br>
 
 Poniżej jest przykład jak działa (jeszcze Work in Progress)</br>
 
-https://github.com/user-attachments/assets/ad75c61b-7149-42a1-8c23-9209f8cfc820
 
+![example_program](https://github.com/user-attachments/assets/aa143473-1e12-43a6-b693-b28aea349556)
