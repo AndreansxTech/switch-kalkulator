@@ -36,9 +36,13 @@ void kolorki()
         case 6:
             SetConsoleTextAttribute(color,6);
             break;
+        case 9:
+            SetConsoleTextAttribute(color,9);
+            break;
         default:
             SetConsoleTextAttribute(color,7);
             break;
+
 
     }
 
@@ -78,6 +82,11 @@ void informacja()
     kolor=12; kolorki(); cout<<"!";
     kolor=14; kolorki(); cout<<"]";
 }
+void wypisz_wynik()
+{
+    kolor=11;
+    kolorki();
+}
 
 int main()
 {
@@ -88,7 +97,7 @@ int main()
     {
         char wybor;
         kolor=7; kolorki();
-        cout<<"Wybierz ktoras z opcji z listy: ";
+        cout<<"Wybierz ktoras z opcji z listy: "; kolor=9; kolorki();
         cin>>wybor;
         cout<<"\n";
         switch(wybor)
@@ -104,25 +113,25 @@ int main()
         case '1':
             informacja();
             cout<<" Wybrales dodawanie\n";
-            kolor=11; kolorki(); cout<<" Wynikiem dodawania liczb "<<x<<" oraz "<<y<<" jest liczba "<<x+y<<endl;
+            wypisz_wynik(); cout<<" Wynikiem dodawania liczb "<<x<<" oraz "<<y<<" jest liczba "<<x+y<<endl;
             break;
         case '2':
             informacja();
             cout<<" Wybrales odejmowanie\n";
-            kolor=11; kolorki();
+            wypisz_wynik();
             cout<<" Wynikiem odejmowania liczb "<<x<<" oraz "<<y<<" jest liczba "<<x-y<<endl;
             break;
         case '3':
             informacja();
             cout<<" Wybrales mnozenie\n";
-            kolor=11; kolorki();
+            wypisz_wynik();
             cout<<" Wynikiem mnozenia liczb "<<x<<" oraz "<<y<<" jest liczba "<<x*y<<endl;
             break;
         case '4':
             if(y!=0)
             {
             informacja();
-            cout<<" Wybrales dzielenie calkowite\n"; kolor=11; kolorki();
+            cout<<" Wybrales dzielenie calkowite\n"; wypisz_wynik();
             cout<<" Wynikiem dzielenia calkowitego liczb "<<x<<" oraz "<<y<<" jest liczba "<<x/y<<endl;
             }
             else
@@ -181,7 +190,7 @@ int main()
             cout<<" Ktora liczbe chcesz podniesc do kwadratu (Wpisz 1 dla pierwszej a 2 dla drugiej): ";
             int wybor3;
             cin>>wybor3;
-            kolor=11; kolorki();
+            wypisz_wynik();
             if (wybor3==1)
             {
                 cout<<"\n Liczba "<<x<<" podniesiona do kwadratu to "<<x*x<<endl;
@@ -202,7 +211,7 @@ int main()
                 int dziel;
                 dziel = x/y;
                 informacja();
-                cout<<" Wybrales dzielenie z reszta\n"; kolor=11; kolorki();
+                cout<<" Wybrales dzielenie z reszta\n"; wypisz_wynik();
                 cout<<" W dzieleniu z reszta liczby "<<x<<" przez liczbe "<<y<<" otzrymujemy "<<dziel<<" calosci oraz "<<fmod(x,y)<<" reszty "<<endl;
             }
             else
@@ -218,21 +227,42 @@ int main()
                 informacja();
                 procenty=(x/y)*100;
                 cout<<" Wybrales procenty\n";
-                kolor=11; kolorki();
+                wypisz_wynik();
                 cout<<" Liczba "<<x<<" stanowi "<<procenty<<"% liczby "<<y<<endl;
             }
             else
             {
+                informacja();
                 cout<<" Liczba druga jest zerem wiec nie mozna obliczyc ile procent z niej stanowi liczba "<<x<<endl;
             }
             break;
         case '9':
-            exit(0);
-            //break;
-        default:
-            kolor=12; kolorki();
-            cout<<"Nie ma takiej opcji\n";
+            char wyjscie_wybor;
+            informacja(); cout<<" Opuszczasz program\n"; kolor=9; kolorki();
+            cout<<"Czy napewno chcesz wyjsc? (T/Y aby wyjsc, N aby zostac): ";
+            cin>>wyjscie_wybor;
+            switch(wyjscie_wybor)
+            {
+            case 'T':
+            case 'Y':
+            case 't':
+            case 'y':
+                {
+                    informacja(); cout<<" Closing Ka1kulat0r_v0.1."; Sleep(500);cout<<".";Sleep(500);cout<<".";Sleep(500);cout<<".";
+                    exit(0);
+                }
+            case 'n':
+            case 'N':
+                informacja(); cout<<" Zostajesz w programie !\n";
+            }
             break;
+        default:
+            {
+                kolor=12; kolorki();
+                cout<<"Nie ma takiej opcji\n";
+                break;
+            }
+
         }
     }
     return 0;
