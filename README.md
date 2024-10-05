@@ -1,5 +1,5 @@
 <h1>Taki projekcik na informatyke w szkole</h1></br>
-Kalkulator mogący wykonać 8 działań matematycznych</br>
+<h2>Kalkulator mogący wykonać 8 działań matematycznych</h2></br>
 Zaprogramowany w C++</br>
 1. Dodawanie</br>
 2. Odejmowanie</br>
