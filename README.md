@@ -11,4 +11,9 @@ Zaprogramowany w C++
 8. Procenty</br>
 Może także wpisać nowe liczby oraz wypisać menu jescze raz</br>
 N. Zadeklarowanie liczb jeszcze raz</br>
-M. Wypisanie menu jeszcze raz
+M. Wypisanie menu jeszcze raz</br>
+
+Poniżej jest przykład jak działa (jeszcze Work in Progress)</br>
+
+https://github.com/user-attachments/assets/ad75c61b-7149-42a1-8c23-9209f8cfc820
+
