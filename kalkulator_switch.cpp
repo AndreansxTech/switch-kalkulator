@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cmath>
-#include <stdlib.h>
+#include <cstdlib>
 #include <windows.h>
 using namespace std;
-long double x, y;
+float x, y;
 int kolor=7;
 HANDLE color=GetStdHandle(STD_OUTPUT_HANDLE);
 void kolorki()
@@ -45,36 +45,19 @@ void kolorki()
 
 
     }
-
-    //cout<<"kontrolnie kolorek: "<<kolor<<endl;
     kolor=0;
 }
-void menu()
+void wypisz_wynik()
 {
     kolor=11;
     kolorki();
+}
+void menu()
+{
+    wypisz_wynik();
     cout<<"Wybierz opcje od 1 do 8 aby wykonac obliczenia\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
     cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
     kolorki();
-}
-void liczby()
-{
-    kolor=6; kolorki(); cout<<"\n Podaj pierwsza liczbe: ";
-        cin>>x;
-
-    cout<<"\n Podaj druga liczbe: ";
-        cin>>y;
-    if(y==0)
-    {
-        kolor=12; kolorki();
-        cout<<"Liczba druga jest zerem co oznacza ze nie bedzie mozna przez nia dzielic!\n";
-    }
-    else
-    {
-        cout<<"Obie liczby sa okej\n";
-        kolorki();
-    }
-
 }
 void informacja()
 {
@@ -82,10 +65,39 @@ void informacja()
     kolor=12; kolorki(); cout<<"!";
     kolor=14; kolorki(); cout<<"]";
 }
-void wypisz_wynik()
+void liczby()
 {
-    kolor=11;
-    kolorki();
+    kolor=6; kolorki(); cout<<"\n Podaj pierwsza liczbe: ";
+    while(!(cin>>x))
+    {
+        informacja();
+        cout<<" Podales niewlasciwa liczbe !\n Prosze podac poprawna pierwsza liczbe: "; cin>>x;
+        cin.clear();
+        cin.ignore();
+
+    }
+    kolor=6; kolorki();
+    cout<<"\n Podaj druga liczbe: ";
+    while(!(cin>>y))
+    {
+        informacja();
+        cout<<" Podales niewlasciwa liczbe !\n Prosze podac poprawna druga liczbe: "; cin>>y;
+        cin.clear();
+        cin.ignore();
+    }
+    if(y==0)
+    {
+        kolor=12; kolorki();
+        cout<<"\n Liczba druga jest zerem co oznacza ze nie bedzie mozna przez nia dzielic!\n";
+    }
+    else
+    {
+        informacja();
+        cout<<" Obie liczby sa okej\n";
+        kolorki();
+    }
+
+
 }
 
 int main()
