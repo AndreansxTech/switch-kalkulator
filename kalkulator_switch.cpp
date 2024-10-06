@@ -6,7 +6,6 @@ using namespace std;
 float x, y;
 int kolor=7;
 HANDLE color=GetStdHandle(STD_OUTPUT_HANDLE);
-
 void kolorki()
 {
     switch(kolor){
@@ -44,12 +43,17 @@ void menu()
     wypisz_wynik();
     cout<<"--- Wybierz opcje od 1 do 8 aby wykonac obliczenia ---\n 1. Dodawanie\n 2. Odejmowanie\n 3. Mnozenie\n 4. Dzielenie calkowite\n 5. Pierwiastek\n";
     cout<<" 6. Podnoszenie do kwadratu\n 7. Dzielenie z reszta\n 8. Procenty\n 9. Koniec\n M. Pokaz ta liste\n N. Zadeklaruj jeszcze raz liczby\n";
+    int lista=0;
+    while(lista<40)
+    {
+        cout<<"-";
+        Sleep(10);
+        lista+=1;
+    }
     kolorki();
-
 }
 void informacja()
 {
-
     kolor=14; kolorki(); cout<<"\n[";
     kolor=12; kolorki(); cout<<"!";
     kolor=14; kolorki(); cout<<"]";
@@ -63,7 +67,6 @@ void liczby()
         cout<<" Podales niewlasciwa liczbe !\n Prosze podac poprawna pierwsza liczbe: "; cin>>x;
         cin.clear();
         cin.ignore();
-
     }
     kolor=6; kolorki();
     cout<<"\n Podaj druga liczbe: ";
@@ -85,15 +88,29 @@ void liczby()
         cout<<" Obie liczby sa okej\n";
         kolorki();
     }
-
-
 }
-
-
+void kalkulator_logo()
+{
+    SetConsoleTextAttribute(color,4); cout<<"K";Sleep(50);
+    SetConsoleTextAttribute(color,6); cout<<"a";Sleep(50);
+    SetConsoleTextAttribute(color,2); cout<<"1";Sleep(50);
+    SetConsoleTextAttribute(color,1); cout<<"k";Sleep(50);
+    SetConsoleTextAttribute(color,3); cout<<"u";Sleep(50);
+    SetConsoleTextAttribute(color,5); cout<<"l";Sleep(50);
+    SetConsoleTextAttribute(color,4); cout<<"a";Sleep(50);
+    SetConsoleTextAttribute(color,6); cout<<"t";Sleep(50);
+    SetConsoleTextAttribute(color,2); cout<<"0";Sleep(50);
+    SetConsoleTextAttribute(color,1); cout<<"r";Sleep(50);
+    SetConsoleTextAttribute(color,3); cout<<" ";Sleep(50);
+    SetConsoleTextAttribute(color,5); cout<<"v";Sleep(50);
+    SetConsoleTextAttribute(color,4); cout<<"0";Sleep(50);
+    SetConsoleTextAttribute(color,6); cout<<".";Sleep(50);
+    SetConsoleTextAttribute(color,2); cout<<"3";Sleep(50);
+}
 int main()
 {
-    cout<<"----Kalkulator oparty na funkcji switch----\n"; kolor=14; kolorki();
-    cout<<"Made by @AndreansxTech on Github\n";
+    kalkulator_logo();
+    kolor=9; kolorki(); cout<<"\n Made by @AndreansxTech on Github\n";
     liczby();
     menu();
     while(true)
@@ -169,32 +186,18 @@ int main()
                     cout<<"\n Mozesz wybrac tylko 1 lub 2 \n";
                     break;
                 }
-                /*if (wybor2==1)
-                {
-                    pierwiastek= sqrt (x);
-                    cout<<"\n Pierwiastek z pierwszej liczby to: "<<pierwiastek<<endl;
-                }
-                else if (wybor2==2)
-                {
-                    pierwiastek= sqrt (y);
-                    cout<<"Pierwiastek z drugiej liczby to: "<<pierwiastek<<endl;
-                }
-                else
-                {
-                    informacja(); cout<<" Mozesz wybrac tylko 1 lub 2 \n";
-                }*/
             }
             else if(x>=0 && y<0)
             {
                 informacja();
-                cout<<"Poniewaz druga liczba jest ujemna, mozesz zpierwiastkowac tylko pierwsza liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
+                cout<<" Poniewaz druga liczba jest ujemna, mozesz zpierwiastkowac tylko pierwsza liczbe\n poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
                 pierwiastek= sqrt (x); wypisz_wynik();
                 cout<<"Pierwiastek z pierwszej liczby to "<<pierwiastek<<endl;
             }
             else if(x<0 && y>=0)
             {
                 informacja();
-                cout<<"Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac druga liczbe poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
+                cout<<" Poniewaz pierwsza liczba jest ujemna, mozesz zpierwiastkowac tylko druga liczbe\n poniewaz zadna liczba do kwadratu nie da liczby ujemnej\n";
                 pierwiastek= sqrt (y); wypisz_wynik();
                 cout<<"Pierwiastek z drugiej liczby to "<<pierwiastek<<endl;
             }
@@ -208,14 +211,14 @@ int main()
             informacja();
             cout<<" Wybrales podnoszenie do kwadratu\n"; kolor=13; kolorki();
             cout<<" Ktora liczbe chcesz podniesc do kwadratu (Wpisz 1 dla pierwszej a 2 dla drugiej): ";
-            int wybor3;
+            char wybor3;
             cin>>wybor3;
             wypisz_wynik();
-            if (wybor3==1)
+            if (wybor3=='1')
             {
                 cout<<"\n Liczba "<<x<<" podniesiona do kwadratu to "<<x*x<<endl;
             }
-            else if (wybor3==2)
+            else if (wybor3=='2')
             {
                 cout<<"\n Liczba "<<y<<" podniesiona do kwadratu to "<<y*y<<endl;
             }
@@ -267,7 +270,7 @@ int main()
             case 't':
             case 'y':
                 {
-                    informacja(); cout<<" Closing Ka1kulat0r_v0.2.";
+                    informacja(); cout<<" Closing "; kalkulator_logo();
                     int slep=0;
                     while(slep<4)
                     {
@@ -290,7 +293,6 @@ int main()
                 cout<<"Nie ma takiej opcji\n";
                 break;
             }
-
         }
     }
     return 0;
