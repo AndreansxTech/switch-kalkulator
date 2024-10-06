@@ -13,8 +13,11 @@ Może także wpisać nowe liczby oraz wypisać menu jescze raz</br>
 N. Zadeklarowanie liczb jeszcze raz</br>
 M. Wypisanie menu jeszcze raz</br>
 
-Poniżej jest przykład jak działa (jeszcze Work in Progress)</br>
-![example_ka1kulat0r](https://github.com/user-attachments/assets/1e57ef48-6b30-4995-bde2-aa29e14610e0)
+Poniżej jest przykład jak działa</br>
+![ezgif-4-7b2cbbe8a8](https://github.com/user-attachments/assets/13be856b-7892-4554-91a5-52a34cf8d978)
+
+
+
 
 <h2>Instalacja</h2></br>
 Aby zacząć używać programu musisz go pobrać na swój komputer z sekcji <a href=https://github.com/AndreansxTech/switch-kalkulator/releases>Releases</a> lub możesz sam stworzyć swojego builda tego programu. Poprostu wejdź w kod źródłowy i dzięki np. GNU general C kompilatorowi sam możesz skompilować kod źródłowy. Jednak bez zmiany ustawień builda nie zadziała on prawidłowo. W kompilatorze musisz zaznaczyć w opcjach linkera biblioteki libgcc, libstdc++ oraz static linking aby zadziałał. Możesz także skompilować go w terminalu, poprostu do polecenia kompilatora dodaj następujące opcje: <i>-static-libgcc - static-libstdc++ -static</i>
