@@ -18,5 +18,5 @@ Poniżej jest przykład jak działa (jeszcze Work in Progress)</br>
 
 <h2>Instalacja</h2></br>
 Aby zacząć używać programu musisz go pobrać na swój komputer z sekcji <a href=https://github.com/AndreansxTech/switch-kalkulator/releases>Releases</a> lub możesz sam stworzyć swojego builda tego programu. Poprostu wejdź w kod źródłowy i dzięki np. GNU general C kompilatorowi sam możesz skompilować kod źródłowy. Jednak bez zmiany ustawień builda nie zadziała on prawidłowo. W kompilatorze musisz zaznaczyć w opcjach linkera biblioteki libgcc, libstdc++ oraz static linking aby zadziałał. Możesz także skompilować go w terminalu, poprostu do polecenia kompilatora dodaj następujące opcje: <i>-static-libgcc - static-libstdc++ -static</i>
-Oficjalny build skompilowant jest przy użyciu kompilatora GNU GCC.</br>
+Oficjalny build skompilowany jest z dołączonymi bibliotekami przy użyciu kompilatora GNU GCC.</br>
 <i>Miłego korzystania życzy AndreansxTech (Michał)</i>
