@@ -1,5 +1,5 @@
 # Projekt na informatykę w szkole - Ka1kulat0r</br>
-<img alt="Static Badge" src="https://img.shields.io/badge/39-commits-green"><img alt="Static Badge" src="https://img.shields.io/badge/Kalkulator-blue"></br>
+<img alt="Static Badge" src="https://img.shields.io/badge/40-commits-green">  <img alt="Static Badge" src="https://img.shields.io/badge/Kalkulator-blue"></br>
 
 
 <h2>Kalkulator mogący wykonać 8 działań matematycznych</h2></br>
