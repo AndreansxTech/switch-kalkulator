@@ -1,4 +1,7 @@
 <h1>Projekt na informatykę w szkole - Ka1kulat0r</h1></br>
+<img alt="Static Badge" src="https://img.shields.io/badge/36-commits-green">  <img alt="Static Badge" src="https://img.shields.io/badge/Kalkulator-blue">
+
+
 <h2>Kalkulator mogący wykonać 8 działań matematycznych</h2></br>
 Zaprogramowany w C++</br>
 1. Dodawanie</br>
