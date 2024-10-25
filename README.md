@@ -1,4 +1,4 @@
-# Projekt na informatykę w szkole - Ka1kulat0r</br>
+# <i> - Ka1kulat0r - </i></br>
 <img alt="Static Badge" src="https://img.shields.io/badge/40-commits-green">  <img alt="Static Badge" src="https://img.shields.io/badge/Kalkulator-blue"></br>
 
 
